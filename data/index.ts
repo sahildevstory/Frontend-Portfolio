@@ -1,0 +1,1 @@
+export { HERO } from "./hero";
