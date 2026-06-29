@@ -1,20 +1,37 @@
+// types/projects.ts (Updated with more comprehensive types)
 export interface Project {
   id: number;
-  featured: boolean;
-  project: string;
   title: string;
   subtitle: string;
   description: string;
-
   image: string;
-
-  technologies: string[];
-
-  github: string;
-  live: string;
-
   year: string;
   role: string;
+  technologies: string[];
+  live: string;
+  github: string;
+  featured?: boolean;
+  stats?: {
+    users?: string;
+    outlets?: string;
+    staff?: string;
+    videos?: string;
+    testimonials?: string;
+    blogs?: string;
+    endpoints?: string;
+    components?: string;
+    score?: string;
+  };
+}
 
-  color: string;
+export interface ProjectFilters {
+  search?: string;
+  technologies?: string[];
+  year?: string;
+  role?: string;
+}
+
+export interface ProjectSortOptions {
+  field: 'year' | 'title' | 'role';
+  direction: 'asc' | 'desc';
 }

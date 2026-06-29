@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import ScaleIn from "../animations/ScaleIn";
 
 export default function Headline() {
   const letters = ["S", "A", "H", "I", "L", " ", "K", "H", "A", "N"];
@@ -31,8 +32,9 @@ export default function Headline() {
       <div>
         <div className="text-white font-bold text-[clamp(40px,8vw,140px)] ">
           {/* LETTERS */}
-
+        
           <div className="flex flex-wrap items-center justify-center gap-1 text-white font-bold text-[clamp(40px,8vw,140px)]">
+           
             {letters.map((l, i) => (
               <motion.span
                 key={i}

@@ -1,9 +1,11 @@
+// components/sections/projects/FeaturedProject.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ArrowUpRight, GitBranch } from "lucide-react";
+import { ArrowUpRight, GitBranch, Star } from "lucide-react";
 import { Project } from "@/components/sections/projects/types/projects";
+import { Badge } from "@/components/ui/badge";
 
 interface FeaturedProjectProps {
   project: Project;
@@ -13,42 +15,27 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
   return (
     <article
       className="
-      group
-      relative
-      mt-14
-      overflow-hidden
-      rounded-3xl
-      border
-      border-white/10
-      bg-white/[0.03]
-      backdrop-blur-xl
-      transition-all
-      duration-500
-      hover:border-red-500/40
+        group
+        relative
+        overflow-hidden
+        rounded-2xl
+        border
+        border-white/10
+        bg-gradient-to-br from-surface to-surface-light
+        transition-all
+        duration-500
+        hover:border-red-500/40
+        hover:shadow-xl
+        hover:shadow-red-500/5
       "
     >
-      {/* Glow */}
+      {/* Glow Effects - Smaller */}
+      <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-600/10 blur-[80px] transition-all duration-700 group-hover:bg-red-600/20" />
+      <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-purple-600/5 blur-[80px] transition-all duration-700 group-hover:bg-purple-600/10" />
 
-      <div
-        className="
-        absolute
-        -right-32
-        -top-32
-        h-80
-        w-80
-        rounded-full
-        bg-red-600/10
-        blur-[120px]
-        transition-all
-        duration-700
-        group-hover:bg-red-600/20
-        "
-      />
-
-      <div className="grid lg:grid-cols-2">
-        {/* Image */}
-
-        <div className="relative overflow-hidden">
+      <div className="grid lg:grid-cols-5">
+        {/* Image - Smaller */}
+        <div className="relative overflow-hidden lg:col-span-2">
           <div className="relative aspect-video lg:h-full">
             <Image
               src={project.image}
@@ -57,158 +44,146 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
               height={450}
               loading="eager"
               className="
-              object-cover
-              transition-transform
-              duration-700
-              group-hover:scale-105
+                object-cover
+                transition-transform
+                duration-700
+                group-hover:scale-105
               "
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent lg:bg-gradient-to-r" />
+          </div>
+          
+          {/* Featured Badge - Smaller */}
+          <div className="absolute top-3 left-3">
+            <Badge className="bg-red-600/20 text-red-400 border-red-600/30 backdrop-blur-sm text-xs px-2 py-0.5">
+              <Star className="w-3 h-3 mr-1 fill-red-400" />
+              Featured
+            </Badge>
           </div>
         </div>
 
-        {/* Content */}
-
-        <div className="flex flex-col justify-between p-10">
+        {/* Content - Compact */}
+        <div className="flex flex-col justify-between p-5 lg:p-6 lg:col-span-3">
           <div>
-            <span
-              className="
-              inline-flex
-              rounded-full
-              border
-              border-red-500/20
-              bg-red-500/10
-              px-4
-              py-2
-              text-xs
-              font-medium
-              uppercase
-              tracking-[0.25em]
-              text-red-400
-              "
-            >
-              Featured Project
-            </span>
-
-            <h2
-              className="
-              mt-6
-              text-4xl
-              font-bold
-              text-white
-              "
-            >
+            {/* Title */}
+            <h2 className="text-2xl md:text-3xl font-bold text-white heading-font">
               {project.title}
             </h2>
 
-            <h3
-              className="
-              mt-2
-              text-xl
-              text-zinc-400
-              "
-            >
+            <h3 className="mt-1 text-sm text-zinc-400">
               {project.subtitle}
             </h3>
 
-            <p
-              className="
-              mt-8
-              leading-8
-              text-zinc-400
-              "
-            >
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400 line-clamp-3">
               {project.description}
             </p>
 
-            {/* Info */}
-
-            <div className="mt-10 flex flex-wrap gap-8">
-              <div>
-                <p className="text-xs uppercase text-zinc-500">Year</p>
-
-                <p className="mt-2 text-white">{project.year}</p>
+            {/* Stats - Compact */}
+            {project.stats && (
+              <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2">
+                {Object.entries(project.stats).slice(0, 4).map(([key, value]) => (
+                  <div key={key} className="bg-surface/30 rounded-lg p-2 border border-white/5">
+                    <p className="text-base font-bold text-white">{value}</p>
+                    <p className="text-[10px] text-gray-500 capitalize">{key}</p>
+                  </div>
+                ))}
               </div>
+            )}
 
+            {/* Info - Compact */}
+            <div className="mt-4 flex flex-wrap gap-4">
               <div>
-                <p className="text-xs uppercase text-zinc-500">Role</p>
-
-                <p className="mt-2 text-white">{project.role}</p>
+                <p className="text-[10px] uppercase text-zinc-500">Year</p>
+                <p className="mt-0.5 text-sm text-white font-medium">{project.year}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase text-zinc-500">Role</p>
+                <p className="mt-0.5 text-sm text-white font-medium">{project.role}</p>
               </div>
             </div>
 
-            {/* Technologies */}
-
-            <div className="mt-10 flex flex-wrap gap-3">
-              {project.technologies.map((tech) => (
+            {/* Technologies - Compact */}
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {project.technologies.slice(0, 6).map((tech) => (
                 <span
                   key={tech}
                   className="
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/5
-                  px-4
-                  py-2
-                  text-sm
-                  text-zinc-300
-                  transition-all
-                  duration-300
-                  hover:border-red-500/40
-                  hover:text-red-300
+                    rounded-full
+                    border
+                    border-white/10
+                    bg-white/5
+                    px-2.5
+                    py-1
+                    text-[10px]
+                    text-zinc-300
+                    transition-all
+                    duration-300
+                    hover:border-red-500/40
+                    hover:text-red-300
                   "
                 >
                   {tech}
                 </span>
               ))}
+              {project.technologies.length > 6 && (
+                <span className="text-[10px] text-zinc-500 px-2 py-1">
+                  +{project.technologies.length - 6}
+                </span>
+              )}
             </div>
           </div>
 
-          {/* Buttons */}
-
-          <div className="mt-12 flex flex-wrap gap-4">
+          {/* Buttons - Compact */}
+          <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href={project.live}
               target="_blank"
               className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              bg-red-600
-              px-6
-              py-3
-              font-medium
-              text-white
-              transition-all
-              duration-300
-              hover:bg-red-500
+                inline-flex
+                items-center
+                gap-1.5
+                rounded-full
+                bg-red-600
+                px-4
+                py-2
+                text-sm
+                font-medium
+                text-white
+                transition-all
+                duration-300
+                hover:bg-red-500
+                hover:scale-105
+                hover:shadow-lg
+                hover:shadow-red-600/25
               "
             >
               Live Demo
-              <ArrowUpRight size={18} />
+              <ArrowUpRight size={15} />
             </Link>
 
             <Link
               href={project.github}
               target="_blank"
               className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-white/10
-              px-6
-              py-3
-              text-white
-              transition-all
-              duration-300
-              hover:border-red-500/40
-              hover:bg-white/5
+                inline-flex
+                items-center
+                gap-1.5
+                rounded-full
+                border
+                border-white/10
+                px-4
+                py-2
+                text-sm
+                text-white
+                transition-all
+                duration-300
+                hover:border-red-500/40
+                hover:bg-white/5
+                hover:scale-105
               "
             >
-              <GitBranch size={18} />
-              Source Code
+              <GitBranch size={15} />
+              Code
             </Link>
           </div>
         </div>

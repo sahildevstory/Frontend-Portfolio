@@ -1,16 +1,21 @@
+// data/skills.ts (Your existing skills data)
 export const SKILLS = [
   {
     category: "Frontend",
     items: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
       "HTML5",
       "CSS3",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
       "Tailwind CSS",
-      "Framer Motion",
-    ],
+      "Material UI",
+      "ShadCN UI",
+      "Redux",
+      "Context API",
+      "Framer Motion"
+    ]
   },
   {
     category: "Backend",
@@ -19,17 +24,34 @@ export const SKILLS = [
       "Express.js",
       "MongoDB",
       "REST APIs",
-    ],
+      "Firebase",
+      "Python",
+      "SQL"
+    ]
   },
   {
-    category: "Tools",
+    category: "Tools & Others",
     items: [
       "Git",
       "GitHub",
-      "Figma",
-      "Postman",
       "VS Code",
-      "Vercel",
-    ],
+      "Lighthouse",
+      "Performance Optimization",
+      "SEO",
+      "Responsive Design",
+      "UI/UX"
+    ]
   },
+  {
+    category: "AI & LLMS",
+    items: [
+    "Gemini ",
+    "Open AI ",
+    "DeepSeek",
+    "Claude",
+    "Bolt.AI",
+    "Cursor"
+    
+    ]
+  }
 ];
