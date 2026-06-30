@@ -1,25 +1,40 @@
+import prisma from "@/lib/prisma";
+
 export async function getBlogs() {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=6",
-    {
-      cache: "no-store",
-    }
-  );
-
-  if (!res.ok) throw new Error("Failed to fetch blogs");
-
-  return res.json();
+  try {
+    return await prisma.blog.findMany({
+      where: { published: true },
+      orderBy: { createdAt: "desc" },
+      include: {
+        author: {
+          select: {
+            name: true,
+            email: true,
+          },
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching blogs from Prisma:", error);
+    return [];
+  }
 }
 
-export async function getBlog(id: string) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-    {
-      cache: "no-store",
-    }
-  );
-
-  if (!res.ok) throw new Error("Failed to fetch blog");
-
-  return res.json();
+export async function getBlog(slug: string) {
+  try {
+    return await prisma.blog.findUnique({
+      where: { slug, published: true },
+      include: {
+        author: {
+          select: {
+            name: true,
+            email: true,
+          },
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching blog from Prisma:", error);
+    return null;
+  }
 }

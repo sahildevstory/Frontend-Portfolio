@@ -82,7 +82,7 @@ export default function Contact() {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id="contact">
       <SectionTitle
         title="Let's Work Together"
         subtitle="Have an idea or opportunity? Let's build something amazing."
@@ -173,7 +173,10 @@ export default function Contact() {
                 >
                   {copied ? (
                     <>
-                      <FiCheck size={isMobile ? 14 : 18} className="text-emerald-400" />
+                      <FiCheck
+                        size={isMobile ? 14 : 18}
+                        className="text-emerald-400"
+                      />
                       <span>Copied!</span>
                     </>
                   ) : (
@@ -218,11 +221,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Why Me Card - Responsive (Optional - can be added back if needed) */}
-        {/* <div className="lg:col-span-1">
-          <WhyMeCard />
-        </div> */}
       </div>
     </SectionContainer>
   );

@@ -473,7 +473,7 @@ export default function Projects() {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id="projects">
       <div className="space-y-6 md:space-y-8">
         {/* Header with Gradient */}
         <div className="relative">

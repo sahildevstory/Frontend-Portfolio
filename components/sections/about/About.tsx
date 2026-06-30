@@ -6,7 +6,7 @@ import AboutStats from "./AboutStats";
 
 export default function About() {
   return (
-    <SectionContainer>
+    <SectionContainer id="about">
       <div className="grid gap-12 lg:grid-cols-12 items-center justify-center">
         {/* Content Column */}
         <div className="lg:col-span-12">
