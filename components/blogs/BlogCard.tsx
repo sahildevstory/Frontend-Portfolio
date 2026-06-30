@@ -30,7 +30,7 @@ export default function BlogCard({ post }: BlogCardProps) {
 
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/blogs/${post.slug}`}
       className="
         group
         relative

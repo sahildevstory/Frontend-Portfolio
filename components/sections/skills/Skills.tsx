@@ -51,7 +51,7 @@ export default function Skills() {
         className="flex-1"
       />
       
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-1">
         {/* Main Skills Box */}
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface to-surface-light p-8 backdrop-blur-xl transition-all duration-500 hover:border-red-500/40 hover:shadow-2xl hover:shadow-red-500/5">
           {/* Glow Effects */}
@@ -153,9 +153,9 @@ export default function Skills() {
         </div>
 
         {/* Why Me Card */}
-        <div className="lg:col-span-1">
+        {/* <div className="lg:col-span-1">
           <WhyMeCard />
-        </div>
+        </div> */}
       </div>
     </SectionContainer>
   );

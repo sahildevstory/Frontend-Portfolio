@@ -1,6 +1,6 @@
 import SectionContainer from "@/components/common/SectionContainer";
 import SectionTitle from "@/components/common/SectionTitle";
-import BlogCard from "@/components/blog/BlogCard";
+import BlogCard from "@/components/blogs/BlogCard";
 import { getBlogs } from "@/lib/api/blog";
 import Link from "next/link";
 
@@ -27,14 +27,14 @@ export default async function BlogPreview() {
             subtitle="Thoughts, tutorials, and insights on web development and design."
             className="mb-0"
           />
-          {blogs.length > 0 && (
-            <Link
-              href="/blog"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-white hover:border-red-500/40 hover:bg-white/5 transition-all duration-300"
-            >
-              View All Blogs →
-            </Link>
-          )}
+      {blogs.length > 0 && (
+  <Link
+    href="/blogs"
+    className="relative z-10 mt-4 md:mt-0 inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-white hover:border-red-500/40 hover:bg-white/5 transition-all duration-300"
+  >
+    View All Blogs →
+  </Link>
+)}
         </div>
 
         {serializedBlogs.length > 0 ? (
@@ -46,7 +46,9 @@ export default async function BlogPreview() {
         ) : (
           <div className="text-center py-12 md:py-20 rounded-2xl border border-white/10 bg-surface/30 backdrop-blur-sm">
             <div className="text-4xl md:text-6xl mb-4">📝</div>
-            <h3 className="text-lg md:text-xl font-bold text-white heading-font">No articles found</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white heading-font">
+              No articles found
+            </h3>
             <p className="text-sm md:text-base text-gray-400 mt-2">
               Stay tuned! Exciting blogs are coming soon.
             </p>

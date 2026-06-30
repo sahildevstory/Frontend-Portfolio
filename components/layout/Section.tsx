@@ -15,7 +15,7 @@ export default function Section({
       className={`  
         container
         
-        py-32
+        py-12
         relative
         ${className}
       `}

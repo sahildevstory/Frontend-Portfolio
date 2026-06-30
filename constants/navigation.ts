@@ -4,14 +4,22 @@ import {
   User,
   Newspaper,
   Mail,
+  LucideWorkflow,
 } from "lucide-react";
+import { TbBrandSketchFilled } from "react-icons/tb";
 
 export const NAV_LINKS = [
-  {
-    title: "Home",
-    href: "#home",
-    icon: Home,
-    label: "Home",
+    {
+    title: "About",
+    href: "#about",
+    icon: User,
+    label: "About",
+  },
+    {
+    title: "Experience",
+    href: "/",
+    icon: TbBrandSketchFilled,
+    label: "Experience",
   },
   {
     title: "Projects",
@@ -19,12 +27,13 @@ export const NAV_LINKS = [
     icon: FolderKanban,
     label: "Projects",  
   },  
-  {
-    title: "About",
-    href: "#about",
-    icon: User,
-    label: "About",
-  },
+  //   {
+  //   title: "Skills",
+  //   href: "#skills",
+  //   icon: LucideWorkflow,
+  //   label: "Projects",  
+  // },
+
   {
     title: "Blog",
     href: "#blog",

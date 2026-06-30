@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import { Inter, Space_Grotesk,  JetBrains_Mono} from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { CustomCursor } from "@/components/effects";
 import PageLayout from "@/layouts/pageLayout";
+import Navbar from "@/components/layout/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,16 +25,20 @@ export const metadata: Metadata = {
   description: "Frontend Developer Portfolio",
 };
 
-
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
+      >
         <CustomCursor />
-        
         <PageLayout>
-          
+          <Navbar />
+
           {children}
         </PageLayout>
       </body>

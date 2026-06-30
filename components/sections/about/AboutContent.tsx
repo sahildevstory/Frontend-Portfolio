@@ -61,7 +61,7 @@ export default function AboutContent() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span className="text-xs text-gray-300 font-medium">
-                Available for work
+                Open to work
               </span>
             </div>
           </div>

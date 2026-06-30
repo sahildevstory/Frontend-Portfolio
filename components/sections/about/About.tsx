@@ -9,7 +9,7 @@ export default function About() {
     <SectionContainer id="about">
       <div className="grid gap-12 lg:grid-cols-12 items-center justify-center">
         {/* Content Column */}
-        <div className="lg:col-span-12">
+        <div className="lg:col-span-12 mt-16">
           <AboutContent />
           {/* <AboutStats /> */}
         </div>

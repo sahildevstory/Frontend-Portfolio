@@ -22,7 +22,7 @@ export default function Intro() {
        
         <ScaleIn>
           <span className="text-[clamp(60px,12vw,200px)] font-bold text-white tracking-wider leading-none">
-            SAHILKHAN
+            SAHIL KHAN
           </span>
         </ScaleIn>
 
@@ -31,8 +31,8 @@ export default function Intro() {
           <Image
             src="/images/intro/CenterLogo.svg"
             alt="Profile"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             loading="eager"
             className="object-contain shadow-2xl max-sm:w-full max-sm:h-auto"
             style={{ width: "auto", height: "auto" }}
