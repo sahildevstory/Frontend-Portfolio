@@ -3,7 +3,6 @@ import "@/app/globals.css";
 import { Inter, Space_Grotesk,  JetBrains_Mono} from "next/font/google";
 import { CustomCursor } from "@/components/effects";
 import PageLayout from "@/layouts/pageLayout";
-import Navbar from "@/components/layout/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],

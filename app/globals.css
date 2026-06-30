@@ -170,3 +170,10 @@ body::before {
 }
 
 
+
+/* Mobile-first adjustments */
+@media (max-width: 640px) {
+  .experience-card {
+    padding: 1rem;
+  }
+}
