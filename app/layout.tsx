@@ -4,6 +4,8 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { CustomCursor } from "@/components/effects";
 import PageLayout from "@/layouts/pageLayout";
 import Navbar from "@/components/layout/Navbar";
+import SpiderWebEffect from "@/components/common/SpiderWebEffect";
+import DeadStarEffect from "@/components/common/DeadStarEffect";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +37,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
       >
-        <CustomCursor />
+        <DeadStarEffect />
+
+        {/* <SpiderWebEffect /> */}
+
         <PageLayout>
           <Navbar />
 

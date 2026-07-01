@@ -83,35 +83,6 @@ export const PROJECTS: Project[] = [
     featured: false,
   },
   {
-    id: 4,
-    title: "Subscription Storefront",
-    subtitle: "E-Commerce Subscription Platform",
-    description:
-      "A Shopify-like subscription storefront enabling 1,000+ premium users to manage plans and place inventory orders across multiple outlets. Features real-time order tracking, outlet selection, configurable order limits, and role-based admin panel managing access permissions for 50+ staff across inventory, orders, and outlet operations.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
-    year: "2025",
-    role: "Frontend Developer",
-    technologies: [
-      "React.js",
-      "Redux",
-      "Context API",
-      "TailwindCSS",
-      "Material UI",
-      "ShadCN UI",
-      "REST APIs",
-      "CyberSource",
-    ],
-    live: "https://subscription-storefront.vercel.app",
-    github: "https://github.com/sahildevstory/subscription-storefront",
-    featured: false,
-    stats: {
-      users: "1,000+",
-      outlets: "30+",
-      staff: "50+",
-    },
-  },
-  {
     id: 5,
     title: "UK Career Portal",
     subtitle: "AI-Assisted Job Search Platform",
@@ -139,33 +110,7 @@ export const PROJECTS: Project[] = [
       score: "90+",
     },
   },
-  {
-    id: 6,
-    title: "Inventory Management",
-    subtitle: "Multi-Outlet Management Platform",
-    description:
-      "An order and inventory management platform used by 30+ outlets with real-time order tracking, outlet selection, and configurable order limits. Features a comprehensive role-based admin panel for managing inventory, orders, and outlet operations with support for 50+ staff members.",
-    image:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=600&fit=crop&crop=center",
-    year: "2025",
-    role: "Frontend Developer",
-    technologies: [
-      "React.js",
-      "Redux",
-      "Context API",
-      "TailwindCSS",
-      "Material UI",
-      "ShadCN UI",
-      "REST APIs",
-    ],
-    live: "https://inventory-management.vercel.app",
-    github: "https://github.com/sahildevstory/inventory-management",
-    featured: false,
-    stats: {
-      outlets: "30+",
-      staff: "50+",
-    },
-  },
+
 ];
 
 // Helper functions

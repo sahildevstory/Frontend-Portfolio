@@ -9,7 +9,7 @@ export default function Headline() {
   const letters = ["S", "A", "H", "I", "L", " ", "K", "H", "A", "N"];
 
   return (
-    <div className="w-full h-auto flex flex-col items-center justify-center mt-10">
+    <div className="w-full h-auto flex flex-col items-center justify-center mt-10 ">
       <Badge
         variant="outline"
         className="
@@ -30,7 +30,7 @@ export default function Headline() {
         Drag • Drop • Animate
       </Badge>
       <div>
-        <div className="text-white font-bold text-[clamp(40px,8vw,140px)] ">
+        <div className="text-white font-bold text-[clamp(40px,8vw,140px)] relative z-5">
           {/* LETTERS */}
         
           <div className="flex flex-wrap items-center justify-center gap-1 text-white font-bold text-[clamp(40px,8vw,140px)]">
@@ -65,7 +65,7 @@ export default function Headline() {
             drag
             dragMomentum={false}
             whileDrag={{ scale: 1.1 }}
-            className="cursor-grab active:cursor-grabbing select-none flex items-center justify-center"
+            className="cursor-grab active:cursor-grabbing select-none flex items-center justify-center "
           >
             <Image
               src="/images/intro/CenterLogo.svg"

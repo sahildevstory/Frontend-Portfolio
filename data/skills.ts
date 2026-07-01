@@ -18,18 +18,6 @@ export const SKILLS = [
     ]
   },
   {
-    category: "Backend",
-    items: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "REST APIs",
-      "Firebase",
-      "Python",
-      "SQL"
-    ]
-  },
-  {
     category: "Tools & Others",
     items: [
       "Git",

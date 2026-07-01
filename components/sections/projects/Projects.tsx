@@ -409,7 +409,7 @@ import { Badge } from "@/components/ui/badge";
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTech, setSelectedTech] = useState<string>("All");
-  const [viewMode, setViewMode] = useState<"bento" | "grid">("bento");
+  const [viewMode, setViewMode] = useState<"bento" | "grid">("grid");
   const [showFilters, setShowFilters] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
